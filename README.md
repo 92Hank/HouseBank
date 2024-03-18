@@ -1,6 +1,14 @@
 # HouseBank
 A simple application which calculates the cost from a housing loan.
 
+#### Setup
+##### Backend -
+
+##### Frontend -
+The frontend was created using create-react-app.
+Next time it is better to use expo for example since the create-react-app will no longer be maintained. You can create native apps with React that run on Android, IOS and the web.
+- commmand - npx create-react-app my-app --template typescript
+
 ## Tech
 - Git and Github
 - Visual Studio
