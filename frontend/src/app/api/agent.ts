@@ -29,21 +29,14 @@ axios.interceptors.response.use(
           throw modelStateErrors.flat();
         }
         toast.error(data.title);
-        // toast.error(data.title, {
-        //     theme: "colored"
-        // });
+
         break;
       case 401:
         toast.error(data.title);
-        // toast.error(data.title, {
-        //     theme: "colored"
-        // });
+
         break;
       case 500:
         router.navigate("server-error", { state: { error: data } });
-        // toast.error(data.title, {
-        //     theme: "colored"
-        // });
         break;
       default:
         break;
@@ -61,14 +54,6 @@ const LoanCalculate = {
   calculate: (calculate: Calculate) =>
     requests.post("/loanCalculation", calculate),
 };
-
-// const TestErrors = {
-//   get404Error: () => requests.get("buggy/not-found"),
-//   get400Error: () => requests.get("buggy/bad-request"),
-//   get401Error: () => requests.get("buggy/unauthorised"),
-//   getValidationError: () => requests.get("buggy/validation-error"),
-//   get500Error: () => requests.get("buggy/server-error"),
-// };
 
 const agent = {
   LoanCalculate,
