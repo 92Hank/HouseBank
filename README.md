@@ -3,11 +3,14 @@ A simple application which calculates the cost from a housing loan.
 
 #### Setup
 ##### Backend -
+Build the solution and try to run it.
 
 ##### Frontend -
 The frontend was created using create-react-app.
 Next time it is better to use expo for example since the create-react-app will no longer be maintained. You can create native apps with React that run on Android, IOS and the web with expo.
 - commmand - npx create-react-app my-app --template typescript
+
+- run npm install in src folder and then npm start
 
 ## Tech
 - Git and Github
