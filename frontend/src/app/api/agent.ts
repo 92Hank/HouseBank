@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import { toast } from "react-toastify";
 import { router } from "../router/Routes"
-import { LoanCalculation } from "../models/loanCalculation";
+import { Calculate } from './../models/calculate';
 
 const sleep = () => new Promise((resolve) => setTimeout(resolve, 500));
 
@@ -58,8 +58,8 @@ const requests = {
 };
 
 const LoanCalculate = {
-  calculate: (loanCalculation: LoanCalculation) =>
-    requests.post("/loanCalculation", loanCalculation),
+  calculate: (calculate: Calculate) =>
+    requests.post("/loanCalculation", calculate),
 };
 
 // const TestErrors = {

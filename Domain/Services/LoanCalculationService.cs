@@ -10,14 +10,14 @@ namespace Domain.Services
 {
     public class LoanCalculationService : ILoanCalculationService
     {
-        public decimal Calculate(LoanCalculation loanCalculation)
+        public decimal Calculate(Calculate calculate)
         {
-            var rate = loanCalculation.Interest > 0 ? loanCalculation.Interest / 100 : loanCalculation.Interest;
-            var termInMonths = loanCalculation.Years * 12;
+            var interest = calculate.Loan?.Interest > 0 ? calculate.Loan.Interest / 100 : calculate.Loan?.Interest;
+            var termInMonths = calculate.LoanCalculation?.Years * 12;
 
-            return loanCalculation.Amount *
-                ((decimal)Math.Pow(1 + (rate / 12), termInMonths) * ((decimal)rate / 12)) /
-                ((decimal)Math.Pow(1 + (rate / 12), termInMonths) - 1);
+            return (decimal)(calculate.LoanCalculation!.Amount *
+                ((decimal)Math.Pow((double)(1 + (interest! / 12)), (double)termInMonths!) * ((decimal)interest! / 12)) /
+                ((decimal)Math.Pow((double)(1 + (interest! / 12)), (double)termInMonths!) - 1));
         }
     }
 }

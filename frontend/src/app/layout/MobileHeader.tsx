@@ -3,51 +3,70 @@ import {
   Drawer,
   IconButton,
   List,
-  ListItem,
+  ListItemButton,
   ListItemText,
- makeStyles
-} from "@material-ui/core";
-import { Link } from "react-router-dom";
+  ListItem,
+  useTheme,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { NavLink } from "react-router-dom";
 
-const useStyles = makeStyles(()=>({
-    link:{
-        textDecoration:"none",
-        color: "blue",
-        fontSize: "20px",
-    },
-    icon:{
-        color: "white"
-    }
-}));
 
 export default function MobileHeader() {
-const classes = useStyles();
   const [openDrawer, setOpenDrawer] = useState(false);
+  const theme = useTheme();
+  const linkStyles = {
+    textDecoration: "none",
+    color: theme.palette.mode === "dark" ? "white" : "black",
+    fontSize: "20px",
+  };
+  
+  const iconStyles = {
+    color: "white",
+  };
   return (
     <>
-      <Drawer
-        open={openDrawer}
-        onClose={() => setOpenDrawer(false)}
-      >
+      <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
         <List>
-         <ListItem onClick={() => setOpenDrawer(false)}>
+          <ListItemButton onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/">Home</Link>
+              <ListItem
+                component={NavLink}
+                to="/"
+                key="/loanCalculation"
+                sx={linkStyles}
+              >
+                Home
+              </ListItem>
             </ListItemText>
-          </ListItem>
-          <ListItem onClick={() => setOpenDrawer(false)}>
+          </ListItemButton>
+          <ListItemButton onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/about">About</Link>
+              <ListItem
+                component={NavLink}
+                to="/about"
+                key="/loanCalculation"
+                sx={linkStyles}
+              >
+                About
+              </ListItem>
             </ListItemText>
-          </ListItem>
-          <ListItem onClick={() => setOpenDrawer(false)}>
+          </ListItemButton>
+          <ListItemButton onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/loanCalculation">Calculation</Link>
+              <ListItem
+                component={NavLink}
+                to="/loanCalculation"
+                key="/loanCalculation"
+                sx={linkStyles}
+              >
+                Calculation
+              </ListItem>
             </ListItemText>
-          </ListItem>
+          </ListItemButton>
         </List>
       </Drawer>
-      <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
+      <IconButton sx={iconStyles} onClick={() => setOpenDrawer(!openDrawer)}>
         <MenuIcon />
       </IconButton>
     </>

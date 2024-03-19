@@ -18,9 +18,9 @@ namespace Backend.Controllers
         [HttpPost]
         [ProducesResponseType(200, Type = typeof(decimal))]
         [ProducesResponseType(400, Type = typeof(void))]
-        public IActionResult Calculate([FromBody] LoanCalculation loanCalculation)
+        public IActionResult Calculate([FromBody] Calculate calculate)
         {
-            return Ok(_loanCalculationService.Calculate(loanCalculation));
+            return Ok(_loanCalculationService.Calculate(calculate));
         }
     }
 }

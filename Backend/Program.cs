@@ -11,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddMvc();
 builder.Services.AddControllers();
 builder.Services.AddTransient<IValidator<LoanCalculation>, LoanCalculationValidator>();
+builder.Services.AddTransient<IValidator<Loan>, LoanValidator>();
 builder.Services.AddScoped<ILoanCalculationService, LoanCalculationService>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -47,5 +48,6 @@ app.UseCors("CorsPolicy");
 app.UseAuthorization();
 
 app.MapControllers();
+
 
 app.Run();

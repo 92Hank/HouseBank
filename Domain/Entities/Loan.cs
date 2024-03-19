@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class LoanCalculation
+    public class Loan
     {
-        public decimal Amount { get; set; }
-        public int Years { get; set; }
+        public string? LoanType { get; set; }
+        public double Interest { get; set; }
     }
 }

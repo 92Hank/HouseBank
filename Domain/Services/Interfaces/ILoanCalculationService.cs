@@ -9,6 +9,6 @@ namespace Domain.Services.Interfaces
 {
     public interface ILoanCalculationService
     {
-        decimal Calculate(LoanCalculation loanCalculation);
+        decimal Calculate(Calculate calculate);
     }
 }
