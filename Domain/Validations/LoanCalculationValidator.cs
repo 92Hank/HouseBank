@@ -14,7 +14,7 @@ namespace Domain.Validations
         {
             RuleFor(c => c.Amount)
                 .GreaterThan(0).WithMessage("Amount must be greater than 0");
-            RuleFor(c => c.Rate)
+            RuleFor(c => c.Interest)
                 .GreaterThan(0).WithMessage("Rate must be greater than 0%")
                 .LessThan(100).WithMessage("Rate must be less than 100%");
             RuleFor(c => c.Years)

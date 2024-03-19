@@ -12,7 +12,7 @@ namespace Domain.Services
     {
         public decimal Calculate(LoanCalculation loanCalculation)
         {
-            var rate = loanCalculation.Rate > 0 ? loanCalculation.Rate / 100 : loanCalculation.Rate;
+            var rate = loanCalculation.Interest > 0 ? loanCalculation.Interest / 100 : loanCalculation.Interest;
             var termInMonths = loanCalculation.Years * 12;
 
             return loanCalculation.Amount *
